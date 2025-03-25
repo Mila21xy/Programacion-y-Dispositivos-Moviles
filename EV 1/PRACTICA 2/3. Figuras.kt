@@ -5,6 +5,18 @@ package `PRACTICA 2`
     Curso: Programación De Dispositivos Móviles
 */
 
+/*
+Ejercicio 3: Figuras
+Cree una clase abstracta “shape” la cual contenga las propiedades
+área, perímetro y las funciones para calcular estos valores e 
+imprimir el resultado de cada operación. Adicional crea tres 
+subclases cuadrado, círculo y rectángulo que reciban los valores 
+de sus lados, el radio en el caso del círculo con constructores 
+secundarios y heredando la clase “shape” y sus métodos. Crear 
+instancias de las subclases y ejecutar las operaciones de área 
+y perímetro para cada instancia.
+*/
+
 // Clase abstracta Shape que representa cualquier figura geométrica
 abstract class Shape {
     // Propiedades protegidas para almacenar área y perímetro
@@ -135,12 +147,3 @@ fun main() {
     circulo.calcularPerimetro()
     circulo.imprimirResultados("Círculo")
 }
-
-/*
-    Propósito:
-    - Crear una clase abstracta "Shape" que represente figuras geométricas con propiedades de área y perímetro.
-    - Implementar subclases específicas: Cuadrado, Rectángulo y Círculo.
-    - Cada subclase debe definir sus propios cálculos de área y perímetro.
-    - Instanciar estas figuras y mostrar sus atributos antes de calcular los resultados.
-    - Mostrar los resultados después de realizar los cálculos.
-*/
