@@ -96,14 +96,3 @@ fun main() {
         println("\nOpción no reconocida.") // Mensaje de error si la opción no es válida  
     }
 }
-
-/*  
-
-    Ejemplo de menú:  
-    ==== Menú ====  
-    1. Suma  
-    2. Resta  
-    3. Multiplicación  
-    4. División  
-    5. Salir  
-*/  
