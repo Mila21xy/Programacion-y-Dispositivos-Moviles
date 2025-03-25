@@ -5,6 +5,17 @@ package `PRACTICA 1`
     Curso: Programación De Dispositivos Móviles
 */
 
+/*
+Ejercicio 4: Adivina Número
+Escribe un programa que genere un número aleatorio entre 1 y 30,
+luego pida al usuario que adivine el número. Proporciona pistas 
+indicando si el número a adivinar es mayor o menor que el número
+ingresado por el usuario. Continúa solicitando intentos hasta 
+que el usuario adivine correctamente el número.Tienes 5 intentos,
+si se acaba debe imprimir game over. De lo contrario mostrar un
+mensaje de felicitación por ganar el juego.
+*/
+
 // Importación de la biblioteca para generar números aleatorios
 // Referencia: https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.random/-random/
 import kotlin.random.Random
@@ -72,12 +83,3 @@ fun main() {
         }
     }
 }
-
-/*
-    Este programa genera un número aleatorio entre 1 y 30,
-    luego solicita al usuario que adivine cuál es el número.
-    Ofrece pistas indicando si el número a adivinar es mayor o menor
-    que el valor ingresado por el usuario.
-    Se permiten hasta 5 intentos; si se agotan, se imprime "Game Over".
-    Si el usuario acierta, se muestra un mensaje de felicitación.
-*/
