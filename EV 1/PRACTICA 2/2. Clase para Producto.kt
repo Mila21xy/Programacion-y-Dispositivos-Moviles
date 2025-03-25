@@ -4,7 +4,13 @@ package `PRACTICA 2`
     Autor: Angela Milagros Quispe Huanca
     Curso: Programación De Dispositivos Móviles
 */
-
+/*
+Ejercicio 1: Clase para Producto
+Diseña una clase Producto que tenga un precio y un descuento aplicable.
+Implementa métodos set y get para establecer y obtener el precio y el 
+descuento, y añade un método para calcular el precio final después de 
+aplicar el descuento. Utilice el set para validar datos.
+*/
 // Clase Producto con precio y descuento
 class Producto(
     private var precio: Float,  // Precio
@@ -66,10 +72,3 @@ fun main() {
     producto.setDescuento(120) // Descuento inválido
     producto.imprimirInformacion()
 }
-
-/*
-    Diseña una clase Producto que tenga un precio y un descuento aplicable.
-    Implementa métodos set y get para establecer y obtener el precio y el descuento,
-    y añade un metodo para calcular el precio final después de aplicar el descuento.
-    Utilice el set para validar datos.
-*/
