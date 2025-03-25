@@ -5,6 +5,14 @@ package `PRACTICA 2`
     Curso: Programación De Dispositivos Móviles  
 */
 
+/*
+Ejercicio 1: Clase para Cuenta Bancaria
+Diseña una clase CuentaBancaria que tenga un saldo y un límite de retiro.
+Implementa métodos set y get para establecer y obtener el saldo, y añade 
+un método para realizar retiros que tenga en cuenta el límite de retiro. 
+Utilice el set para validar datos.
+*/
+
 // Clase CuentaBancaria con saldo y límite de retiro
 class CuentaBancaria(
     private var saldo: Number,         // Saldo de la cuenta
@@ -66,10 +74,3 @@ fun main() {
     cuenta.limiteDeRetiro = 200
     cuenta.retirar(150)
 }
-
-/*
-    Diseña una clase CuentaBancaria que tenga un saldo y un límite de retiro.
-    Implementa métodos set y get para establecer y obtener el saldo,
-    y añade un metodo para realizar retiros que tenga en cuenta el límite de retiro.
-    Utilice el set para validar datos.
-*/
