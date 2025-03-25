@@ -5,9 +5,25 @@ package `PRACTICA 1`
     Curso: Programación De Dispositivos Móviles  
 */
 
+/*
+Ejercicio 3: Calculadora Elemental
+Realizar una calculadora  básica suma, resta, multiplicación,
+división. Debe imprimir un menú con las opciones incluyendo 
+una opción salir. Validar que la opción esté disponible. 
+Imprimir resultados. 
+Ejemplo de menú:
+==== Menú ====
+Suma
+Resta
+Multiplicación
+División
+Salir.
+
+*/
+
 // Función que imprime el menú de operaciones disponibles para el usuario  
 fun mostrarMenu() {
-    println("\n*--- Menú ---*")
+    println("\n==== Menú ====")
     println("1. Suma")
     println("2. Resta")
     println("3. Multiplicación")
@@ -84,7 +100,7 @@ fun main() {
 /*  
 
     Ejemplo de menú:  
-    *--- Menú ---*  
+    ==== Menú ====  
     1. Suma  
     2. Resta  
     3. Multiplicación  
