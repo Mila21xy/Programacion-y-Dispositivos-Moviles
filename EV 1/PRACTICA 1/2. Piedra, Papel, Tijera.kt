@@ -5,6 +5,15 @@ package `PRACTICA 1`
     Curso: Programación De Dispositivos Móviles
 */
 
+/*
+Ejercicio 2: Piedra, Papel, Tijera
+Escriba un programa que realice el juego de piedra, 
+papel o tijera. La computadora debe elegir de manera
+aleatoria la opción a elegir. Después debe preguntar
+al usuario que opción quiere. Imprimir si ganó, 
+perdió o empató.
+*/
+
 // Importación para terminar el proceso si es necesario
 import kotlin.system.exitProcess
 
@@ -68,9 +77,3 @@ fun main() {
     // Mostrar el resultado
     println("\n$resultado")
 }
-
-/*
-    Ejemplo:
-    - Si la computadora elige "piedra" y el usuario elige "tijera", el programa debe imprimir "Perdiste".
-    - Si la computadora elige "papel" y el usuario también elige "papel", el programa debe imprimir "Empate".
-*/
