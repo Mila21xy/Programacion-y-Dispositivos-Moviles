@@ -1,11 +1,6 @@
-package `PRACTICA 1`
-
 /*
-    Autor: Angela Milagros Quispe Huanca
-    Curso: Programacion De Dispositivos Moviles
-*/
-
-/*
+    Estudiante: Angela Milagros Quispe Huanca
+    
 Ejercicio 1: Evaluación Empleados
 En una determinada empresa, sus empleados son evaluados cada 
 seis meses. Los puntos que pueden obtener en la evaluación 
@@ -21,46 +16,45 @@ que recibirá el usuario.
 Ejemplo: Salario 10,000; Puntuación 8.
 Dinero = 10,000 * (8/10)= 8000. Resultado: Nivel de Rendimiento Aceptable, Cantidad de Dinero Recibido $8000. 
 
-     +---------------+--------------------+
-     |     Nivel     |     Puntuación     |
-     +---------------+--------------------+
-     |  Inaceptable  |       0 a 3        |
-     +---------------+--------------------+
-     |   Aceptable   |       4 a 6        |
-     +---------------+--------------------+
-     |   Meritorio   |       7 a 10       |
-     +---------------+--------------------+
+                     +---------------+--------------------+
+                     |     Nivel     |     Puntuación     |
+                     +---------------+--------------------+
+                     |  Inaceptable  |       0 a 3        |
+                     +---------------+--------------------+
+                     |   Aceptable   |       4 a 6        |
+                     +---------------+--------------------+
+                     |   Meritorio   |       7 a 10       |
+                     +---------------+--------------------+
 
 */
 
-// Funcion que evalua que la puntuacion este dentro del rango
-fun evaluarRango(puntuacion: Int): Boolean {
-    return puntuacion in 0..10
-}
+// Función que verifica que la puntuación esté en el rango adecuado  
+fun esPuntuacionValida(puntuacion: Int): Boolean {  
+    return puntuacion in 0..10  
+}  
 
-// Funcion para evaluar al empleado: entrada el salario y la puntuacion
-fun evaluarEmpleados(salario: Double, puntuacion: Int): String {
-    // Si la puntuación es inválida, establecerla en "Desconocido" y el dinero en 0
-    if (!evaluarRango(puntuacion)) {
-        return "Nivel de Rendimiento: Desconocido, Cantidad de Dinero Recibido: $0.00"
-    }
+// Función para calcular el nivel y el dinero del empleado  
+fun calcularEvaluacion(salarioMensual: Double, puntuacion: Int): String {  
+    if (!esPuntuacionValida(puntuacion)) {  
+        return "Nivel de Rendimiento: Desconocido, Cantidad de Dinero Recibido: $0.00"  
+    }  
 
-    // Calcular el dinero adicional basado en la fórmula de puntuación
-    val adicional: Double = salario * (puntuacion / 10.0)
+    val dineroGanado = salarioMensual * (puntuacion / 10.0)  
+    val nivelRendimiento = when (puntuacion) {  
+        in 0..3 -> "Inaceptable"  
+        in 4..6 -> "Aceptable"  
+        in 7..10 -> "Meritorio"  
+        else -> "Desconocido"  
+    }  
 
-    // Determinar nivel de rendimiento de acuerdo a la puntuación del empleado
-    val nivel = when (puntuacion) {
-        in 0..3 -> "Inaceptable"
-        in 4..6 -> "Aceptable"
-        in 7..10 -> "Meritorio"
-        else -> "Desconocido"
-    }
+    return "Nivel de Rendimiento: $nivelRendimiento, Cantidad de Dinero Recibido: $${"%.2f".format(dineroGanado)}"  
+}  
 
-    // Retornar el resultado en el formato solicitado
-    return "Nivel de Rendimiento: $nivel, Cantidad de Dinero Recibido: $${"%.2f".format(adicional)}"
-}
+fun main() {  
+    // Solicitar la puntuación y el salario del empleado  
+    val salario = 10000.0  
+    val puntuacion = 8  
 
-fun main() {
-    // Evaluar a un empleado
-    println(evaluarEmpleados(10000.0,8))
-}
+    // Evaluar al empleado y mostrar el resultado  
+    println(calcularEvaluacion(salario, puntuacion))  
+}  
