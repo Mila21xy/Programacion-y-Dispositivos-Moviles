@@ -1,11 +1,6 @@
-package `PRACTICA 2`
-
 /*  
-    Autor: Angela Milagros Quispe Huanca  
-    Curso: Programación De Dispositivos Móviles  
-*/
-
-/*
+    Estudiante: Angela Milagros Quispe Huanca  
+    
 Ejercicio 1: Clase para Cuenta Bancaria
 Diseña una clase CuentaBancaria que tenga un saldo y un límite de retiro.
 Implementa métodos set y get para establecer y obtener el saldo, y añade 
@@ -13,64 +8,48 @@ un método para realizar retiros que tenga en cuenta el límite de retiro.
 Utilice el set para validar datos.
 */
 
-// Clase CuentaBancaria con saldo y límite de retiro
-class CuentaBancaria(
-    private var saldo: Number,         // Saldo de la cuenta
-    private var limiteRetiro: Number   // Límite de retiro
-) {
-    // Validaciones iniciales
-    init {
-        require(saldo.toDouble() >= 0) { "El saldo no puede ser negativo." }
-        require(limiteRetiro.toDouble() > 0) { "El límite de retiro debe ser mayor que 0." }
-    }
+// Clase que representa una cuenta bancaria  
+class CuentaBancaria(  
+    private var balance: Double,        // Saldo de la cuenta  
+    private var maxRetiro: Double       // Límite de retiro  
+) {  
+    // Validaciones al crear la cuenta  
+    init {  
+        require(balance >= 0) { "El saldo inicial no puede ser negativo." }  
+        require(maxRetiro > 0) { "El límite de retiro debe ser mayor que cero." }  
+    }  
 
-    // Propiedad saldo con validación
-    var saldoActual: Number
-        get() = saldo
-        set(value) {
-            require(value.toDouble() >= 0) { "El saldo no puede ser negativo." }
-            if (value.toDouble() != saldo.toDouble()) {
-                saldo = value
-                println("Saldo actualizado: $saldo\n")
-            } else {
-                println("El saldo no cambió: $saldo\n")
-            }
-        }
+    // Propiedad para acceder y actualizar el balance  
+    var saldo: Double  
+        get() = balance  
+        set(value) {  
+            require(value >= 0) { "El saldo no puede ser negativo." }  
+            balance = value  
+            println("El saldo se ha actualizado a: $balance")  
+        }  
 
-    // Propiedad límite de retiro con validación
-    var limiteDeRetiro: Number
-        get() = limiteRetiro
-        set(value) {
-            require(value.toDouble() > 0) { "El límite de retiro debe ser mayor a 0." }
-            if (value.toDouble() != limiteRetiro.toDouble()) {
-                limiteRetiro = value
-                println("Límite de retiro actualizado: $limiteRetiro\n")
-            } else {
-                println("El límite de retiro no cambió: $limiteRetiro\n")
-            }
-        }
+    // Método para realizar un retiro  
+    fun retirar(monto: Double) {  
+        when {  
+            monto > balance -> println("Fondos insuficientes para completar el retiro.")  
+            monto > maxRetiro -> println("El monto excede el límite de retiro permitido.")  
+            else -> {  
+                balance -= monto  
+                println("Retiro exitoso de: $monto. Saldo restante: $balance")  
+            }  
+        }  
+    }  
+}  
 
-    // Método para retirar dinero
-    fun retirar(monto: Number) {
-        val montoDouble = monto.toDouble()
-        when {
-            montoDouble > saldo.toDouble() -> println("Saldo insuficiente. Faltan ${montoDouble - saldo.toDouble()}\n")
-            montoDouble > limiteRetiro.toDouble() -> println("El monto excede el límite de retiro ($limiteRetiro).\n")
-            else -> {
-                saldo = saldo.toDouble() - montoDouble
-                println("Retiro exitoso! Saldo: $saldo\n")
-            }
-        }
-    }
-}
+fun main() {  
+    // Crear una cuenta con saldo inicial y límite de retiro  
+    val cuenta = CuentaBancaria(1000.0, 300.0)  
 
-// Función principal
-fun main() {
-    val cuenta = CuentaBancaria(500, 500)
+    // Mostrar saldo actual  
+    println("Saldo actual: ${cuenta.saldo}")  
 
-    println("Saldo inicial: ${cuenta.saldoActual}\n")
-
-    cuenta.saldoActual = 100
-    cuenta.limiteDeRetiro = 200
-    cuenta.retirar(150)
+    // Intentar realizar retiros  
+    cuenta.retirar(400.0) // Excede límite de retiro  
+    cuenta.retirar(200.0) // Retiro exitoso  
+    println("Saldo después del retiro: ${cuenta.saldo}")  
 }
