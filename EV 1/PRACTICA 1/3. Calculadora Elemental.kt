@@ -1,5 +1,5 @@
 /*  
-    Autor: Angela Milagros Quispe Huanca  
+    Estudiante: Angela Milagros Quispe Huanca  
 
 Ejercicio 3: Calculadora Elemental
 Realizar una calculadora  básica suma, resta, multiplicación,
