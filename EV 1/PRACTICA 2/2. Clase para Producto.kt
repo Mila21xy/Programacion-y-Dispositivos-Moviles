@@ -1,74 +1,78 @@
-package `PRACTICA 2`
+/*
+    Estudiante: Angela Milagros Quispe Huanca
 
-/*
-    Autor: Angela Milagros Quispe Huanca
-    Curso: Programación De Dispositivos Móviles
-*/
-/*
 Ejercicio 1: Clase para Producto
 Diseña una clase Producto que tenga un precio y un descuento aplicable.
 Implementa métodos set y get para establecer y obtener el precio y el 
 descuento, y añade un método para calcular el precio final después de 
 aplicar el descuento. Utilice el set para validar datos.
 */
-// Clase Producto con precio y descuento
-class Producto(
-    private var precio: Float,  // Precio
-    private var descuento: Int  // Descuento (0-100)
-) {
-    // Validaciones iniciales
-    init {
-        if (precio <= 0) {
-            println("Precio inválido. Se establece en 1 por defecto.")
-            precio = 1f
-        }
-        if (descuento !in 0..100) {
-            println("Descuento inválido. Se establece en 0 por defecto.")
-            descuento = 0
-        }
-    }
 
-    // Métodos para modificar precio y descuento con validaciones
-    fun setPrecio(nuevoPrecio: Float) {
-        if (nuevoPrecio > 0) {
-            precio = nuevoPrecio
-            println("Nuevo precio: $precio")
-        } else {
-            println("El precio debe ser mayor a 0.")
-        }
-    }
+// Clase que representa un producto con un precio y un descuento  
+class Producto(  
+    private var _precio: Double,  // Precio del producto  
+    private var _descuento: Int    // Descuento en porcentaje (0-100)  
+) {  
+    // Inicializador que valida los valores  
+    init {  
+        if (_precio <= 0) {  
+            println("Precio inválido. Se establece en 1.0 por defecto.")  
+            _precio = 1.0  
+        }  
+        if (_descuento !in 0..100) {  
+            println("Descuento inválido. Se establece en 0 por defecto.")  
+            _descuento = 0  
+        }  
+    }  
 
-    fun setDescuento(nuevoDescuento: Int) {
-        if (nuevoDescuento in 0..100) {
-            descuento = nuevoDescuento
-            println("Nuevo descuento: $descuento%")
-        } else {
-            println("Descuento fuera de rango (0-100).")
-        }
-    }
+    // Método para establecer un nuevo precio con validación  
+    fun setPrecio(nuevoPrecio: Double) {  
+        if (nuevoPrecio > 0) {  
+            _precio = nuevoPrecio  
+            println("Precio actualizado: $_precio")  
+        } else {  
+            println("El precio debe ser mayor que 0.")  
+        }  
+    }  
 
-    // Métodos para obtener valores
-    fun getPrecio(): Float = precio
-    fun getDescuento(): Int = descuento
+    // Método para obtener el precio  
+    fun getPrecio(): Double {  
+        return _precio  
+    }  
 
-    // Calcula el precio final con descuento
-    fun calcularPrecioFinal(): Float = precio * (1 - descuento / 100f)
+    // Método para establecer un nuevo descuento con validación  
+    fun setDescuento(nuevoDescuento: Int) {  
+        if (nuevoDescuento in 0..100) {  
+            _descuento = nuevoDescuento  
+            println("Descuento establecido: $_descuento%")  
+        } else {  
+            println("El descuento debe estar entre 0 y 100.")  
+        }  
+    }  
 
-    // Muestra la información del producto
-    fun imprimirInformacion() {
-        println("Precio: $precio | Descuento: $descuento% | Final: ${calcularPrecioFinal()}\n")
-    }
-}
+    // Método para obtener el descuento  
+    fun getDescuento(): Int {  
+        return _descuento  
+    }  
 
-// Prueba de la clase Producto
-fun main() {
-    val producto = Producto(100f, 10)
-    producto.imprimirInformacion()
+    // Método para calcular el precio final después de aplicar el descuento  
+    fun calcularPrecioFinal(): Double {  
+        val descuentoValor = _precio * _descuento / 100  
+        return _precio - descuentoValor  
+    }  
+}  
 
-    producto.setPrecio(200f)
-    producto.setDescuento(15)
-    producto.imprimirInformacion()
+// Función principal para probar la clase  
+fun main() {  
+    val producto = Producto(100.0, 15)  
+    
+    println("Precio original: ${producto.getPrecio()}")  
+    println("Descuento: ${producto.getDescuento()}%")  
+    println("Precio final: ${producto.calcularPrecioFinal()}")  
 
-    producto.setDescuento(120) // Descuento inválido
-    producto.imprimirInformacion()
+    // Modificar precio y descuento  
+    producto.setPrecio(80.0)  
+    producto.setDescuento(20)  
+
+    println("Nuevo precio final: ${producto.calcularPrecioFinal()}")  
 }
