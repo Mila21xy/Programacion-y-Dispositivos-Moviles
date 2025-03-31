@@ -1,11 +1,6 @@
-package `PRACTICA 2`
-
 /*
-    Autor: Angela Milagros Quispe Huanca
-    Curso: Programación De Dispositivos Móviles
-*/
+    Estudiante: Angela Milagros Quispe Huanca
 
-/*
 Ejercicio 3: Figuras
 Cree una clase abstracta “shape” la cual contenga las propiedades
 área, perímetro y las funciones para calcular estos valores e 
@@ -17,133 +12,80 @@ instancias de las subclases y ejecutar las operaciones de área
 y perímetro para cada instancia.
 */
 
-// Clase abstracta Shape que representa cualquier figura geométrica
-abstract class Shape {
-    // Propiedades protegidas para almacenar área y perímetro
-    protected var area: Number = 0.0
-    protected var perimetro: Number = 0.0
+// Clase abstracta Figura representando una figura geométrica  
+abstract class Figura {  
+    // Propiedades para el cálculo del área y el perímetro  
+    protected var area: Double = 0.0  
+    protected var perimetro: Double = 0.0  
 
-    // Métodos abstractos que deben ser implementados por las subclases para calcular área y perímetro
-    abstract fun calcularArea()
-    abstract fun calcularPerimetro()
+    // Métodos abstractos para calcular área y perímetro  
+    abstract fun calcularArea()  
+    abstract fun calcularPerimetro()  
 
-    // Método común para mostrar los resultados de cada figura
-    fun imprimirResultados(nombre: String) {
-        println("Resultados del $nombre")
-        println("Área: $area")
-        println("Perímetro: $perimetro\n")
-    }
-}
+    // Método para mostrar los resultados  
+    fun mostrarResultados(nombre: String) {  
+        println("$nombre:")  
+        println("Área: $area")  
+        println("Perímetro: $perimetro\n")  
+    }  
+}  
 
-// Subclase Cuadrado: Define un cuadrado y hereda de Shape
-class Cuadrado(private var lado: Number) : Shape() {
+// Clase Cuadrado que hereda de Figura  
+class Cuadrado(private val lado: Double) : Figura() {  
+    init {  
+        calcularArea()  
+        calcularPerimetro()  
+    }  
 
-    // Inicialización que valida que el lado sea mayor a 0, asignando 1 como valor por defecto
-    init {
-        if (lado.toDouble() <= 0) {
-            println("Lado inválido. Se asignará 1 por defecto.\n")
-            lado = 1
-        }
-    }
+    override fun calcularArea() {  
+        area = lado * lado  
+    }  
 
-    // Cálculo del área (lado * lado)
-    override fun calcularArea() {
-        area = lado.toDouble() * lado.toDouble()
-    }
+    override fun calcularPerimetro() {  
+        perimetro = 4 * lado  
+    }  
+}  
 
-    // Cálculo del perímetro (4 * lado)
-    override fun calcularPerimetro() {
-        perimetro = 4 * lado.toDouble()
-    }
+// Clase Circulo que hereda de Figura  
+class Circulo(private val radio: Double) : Figura() {  
+    init {  
+        calcularArea()  
+        calcularPerimetro()  
+    }  
 
-    // Método para mostrar los atributos del cuadrado
-    fun imprimirAtributos() {
-        println("Atributos del Cuadrado:")
-        println("Lado: $lado")
-    }
-}
+    override fun calcularArea() {  
+        area = Math.PI * radio * radio  
+    }  
 
-// Subclase Rectángulo: Define un rectángulo y hereda de Shape
-class Rectangulo(private var base: Number, private var altura: Number) : Shape() {
+    override fun calcularPerimetro() {  
+        perimetro = 2 * Math.PI * radio  
+    }  
+}  
 
-    // Inicialización que valida que la base y la altura sean mayores a 0
-    init {
-        if (base.toDouble() <= 0) {
-            println("Base inválida. Se asignará 1 por defecto.\n")
-            base = 1
-        }
-        if (altura.toDouble() <= 0) {
-            println("Altura inválida. Se asignará 1 por defecto.\n")
-            altura = 1
-        }
-    }
+// Clase Rectangulo que hereda de Figura  
+class Rectangulo(private val base: Double, private val altura: Double) : Figura() {  
+    init {  
+        calcularArea()  
+        calcularPerimetro()  
+    }  
 
-    // Cálculo del área (base * altura)
-    override fun calcularArea() {
-        area = base.toDouble() * altura.toDouble()
-    }
+    override fun calcularArea() {  
+        area = base * altura  
+    }  
 
-    // Cálculo del perímetro (2 * (base + altura))
-    override fun calcularPerimetro() {
-        perimetro = 2 * (base.toDouble() + altura.toDouble())
-    }
+    override fun calcularPerimetro() {  
+        perimetro = 2 * (base + altura)  
+    }  
+}  
 
-    // Método para mostrar los atributos del rectángulo
-    fun imprimirAtributos() {
-        println("Atributos del Rectángulo:")
-        println("Base: $base")
-        println("Altura: $altura")
-    }
-}
+// Función principal para ejecutar el código  
+fun main() {  
+    val cuadrado = Cuadrado(4.0)  
+    cuadrado.mostrarResultados("Cuadrado")  
 
-// Subclase Círculo: Define un círculo y hereda de Shape
-class Circulo(private var radio: Number) : Shape() {
+    val circulo = Circulo(3.0)  
+    circulo.mostrarResultados("Círculo")  
 
-    // Inicialización que valida que el radio sea mayor a 0
-    init {
-        if (radio.toDouble() <= 0) {
-            println("Radio inválido. Se asignará 1 por defecto.\n")
-            radio = 1
-        }
-    }
-
-    // Cálculo del área (π * radio^2)
-    override fun calcularArea() {
-        area = Math.PI * radio.toDouble() * radio.toDouble()
-    }
-
-    // Cálculo del perímetro (2 * π * radio)
-    override fun calcularPerimetro() {
-        perimetro = 2 * Math.PI * radio.toDouble()
-    }
-
-    // Método para mostrar los atributos del círculo
-    fun imprimirAtributos() {
-        println("Atributos del Círculo:")
-        println("Radio: $radio")
-    }
-}
-
-// Función principal donde se instancian las figuras y se ejecutan las operaciones
-fun main() {
-    // Creación de un cuadrado
-    val cuadrado = Cuadrado(4)
-    cuadrado.imprimirAtributos() // Muestra los atributos
-    cuadrado.calcularArea()
-    cuadrado.calcularPerimetro()
-    cuadrado.imprimirResultados("Cuadrado") // Muestra el área y el perímetro
-
-    // Creación de un rectángulo
-    val rectangulo = Rectangulo(5, 3)
-    rectangulo.imprimirAtributos()
-    rectangulo.calcularArea()
-    rectangulo.calcularPerimetro()
-    rectangulo.imprimirResultados("Rectángulo")
-
-    // Creación de un círculo
-    val circulo = Circulo(2.5)
-    circulo.imprimirAtributos()
-    circulo.calcularArea()
-    circulo.calcularPerimetro()
-    circulo.imprimirResultados("Círculo")
+    val rectangulo = Rectangulo(5.0, 3.0)  
+    rectangulo.mostrarResultados("Rectángulo")  
 }
