@@ -8,21 +8,21 @@
   
 # $${\color{red}Prácticas}$$
   
-## ${\color{red}Práctica \space 01}$
+## ${\color{red}Práctica \space 01 \space (IntelliJ)}$
 
 - ${\color{black}Evaluación \space Empleados}$
 - ${\color{black}Piedra, \space  Papel, \space Tijera}$
 - ${\color{black}Calculadora \space Elemental}$
 - ${\color{black}Adivina \space Número}$
   
-## ${\color{red}Práctica \space 02}$
+## ${\color{red}Práctica \space 02 \space (IntelliJ)}$
 
 - ${\color{black}Clase \space  para \space Cuenta \space Bancaria}$
 - ${\color{black}Clase \space para \space Producto}$
 - ${\color{black}Figuras}$
 - ${\color{black}Sistema \space de \space Gestión \space de \space Biblioteca}$
 
-## ${\color{red}Práctica \space 03}$
+## ${\color{red}Práctica \space 03 \space (Android \space Studio)}$
 
 - ${\color{black}Próximos \space ejercicios...}$
 
