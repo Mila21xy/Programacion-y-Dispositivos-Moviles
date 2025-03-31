@@ -1,5 +1,5 @@
 /*
-    Autor: Angela Milagros Quispe Huanca
+    Estudiante: Angela Milagros Quispe Huanca
 
 Ejercicio 4: Adivina Número
 Escribe un programa que genere un número aleatorio entre 1 y 30,
