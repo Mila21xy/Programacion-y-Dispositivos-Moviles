@@ -1,40 +1,36 @@
+# 📱 Programación y Dispositivos Móviles
 
+## 👩‍💻 Acerca del Autor
 
-# $${\color{red}Programación \space y \space Dispositivos \space Moviles}$$
-
-## ${\color{red}Acerca \space del \space Autor}$
-
-- ${\color{black}Angela \space Milagros \space Quispe \space Huanca}$
+- **Angela Milagros Quispe Huanca**
   
-# $${\color{red}Prácticas}$$
+# 📚 Prácticas
   
-## ${\color{red}Práctica \space 01 \space (IntelliJ)}$
+## [🧠 Práctica 01 (IntelliJ)](https://github.com/Mila21xy/Programacion-y-Dispositivos-Moviles/tree/main/EV%201/PRACTICA%201)
 
-- ${\color{black}Evaluación \space Empleados}$
-- ${\color{black}Piedra, \space  Papel, \space Tijera}$
-- ${\color{black}Calculadora \space Elemental}$
-- ${\color{black}Adivina \space Número}$
+- 🧮 Evaluación Empleados
+- ✂️ Piedra, Papel, Tijera
+- 🧾 Calculadora Elemental
+- 🔢 Adivina Número
   
-## ${\color{red}Práctica \space 02 \space (IntelliJ)}$
+## 🧠 [Práctica 02 (IntelliJ)](https://github.com/Mila21xy/Programacion-y-Dispositivos-Moviles/tree/main/EV%201/PRACTICA%202)
 
-- ${\color{black}Clase \space  para \space Cuenta \space Bancaria}$
-- ${\color{black}Clase \space para \space Producto}$
-- ${\color{black}Figuras}$
-- ${\color{black}Sistema \space de \space Gestión \space de \space Biblioteca}$
+- 🏦 Clase para Cuenta Bancaria
+- 📦 Clase para Producto
+- 🔺 Figuras
+- 📚 Sistema de Gestión de Biblioteca
 
-## ${\color{red}Práctica \space 04 \space (Android \space Studio)}$
+## 🤖 [Práctica 04 (Android Studio)](https://github.com/Mila21xy/Programacion-y-Dispositivos-Moviles/tree/main/EV%202/Practica-4)
 
-- ${\color{black}Editor \space de \space perfil \space con \space confirmación}$
-- ${\color{black}Editor \space de \space nota \space rápida}$
+- 👤 Editor de perfil con confirmación
+- 📝 Editor de nota rápida
 
-## ${\color{red}Práctica \space 05}$
+## 🍔 [Práctica 05 (Android Studio)](https://github.com/Mila21xy/Programacion-y-Dispositivos-Moviles/tree/main/EV%202/Practica-5)
 
-- ${\color{black}Configurador \space de \space pedido \space de \space comida }$ 
+- 🍽️ Configurador de pedido de comida
 
-----------
+-----------------------------
 
 Creado con ❤️ por [Angela Milagros Quispe Huanca](https://github.com/Mila21xy/Programacion-y-Dispositivos-Moviles.git) 😊
-
-
 
 --------------------------
