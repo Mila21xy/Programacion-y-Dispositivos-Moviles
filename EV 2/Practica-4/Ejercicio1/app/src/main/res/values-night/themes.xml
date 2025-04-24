@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme for dark mode -->
+    <style name="Base.Theme.Ejercicio1" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryNight</item>        <!-- Color principal en modo oscuro -->
+        <item name="colorOnPrimary">@color/colorTextOnPrimaryNight</item> <!-- Texto sobre el color primario (blanco) -->
+        <item name="colorSecondary">@color/colorSecondaryNight</item>    <!-- Color secundario (verde claro) -->
+        <item name="colorOnSecondary">@color/colorTextPrimaryNight</item>  <!-- Texto sobre el color secundario (blanco) -->
+        <item name="colorBackground">@color/colorBackgroundNight</item>    <!-- Color de fondo (negro suave) -->
+        <item name="colorOnBackground">@color/colorTextPrimaryNight</item>  <!-- Texto sobre el fondo (blanco) -->
+        <item name="colorSurface">@color/colorSurfaceNight</item>          <!-- Color de superficie (gris oscuro) -->
+        <item name="colorOnSurface">@color/colorTextPrimaryNight</item>    <!-- Texto sobre la superficie (blanco) -->
+
+        <item name="android:textColor">@color/colorTextPrimaryNight</item> <!-- Color de texto predeterminado (blanco) -->
+    </style>
+</resources>

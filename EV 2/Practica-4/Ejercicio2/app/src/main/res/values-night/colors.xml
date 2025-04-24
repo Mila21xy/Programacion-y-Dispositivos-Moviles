@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#BB86FC</color> <!-- Color primario en modo oscuro -->
+    <color name="colorSecondary">#03DAC5</color> <!-- Color secundario en modo oscuro -->
+    <color name="colorSurface">#1E1E1E</color> <!-- Color de superficie en modo oscuro -->
+    <color name="black">#FF000000</color> <!-- Negro puro -->
+    <color name="white">#FFFFFFFF</color> <!-- Blanco puro -->
+</resources>

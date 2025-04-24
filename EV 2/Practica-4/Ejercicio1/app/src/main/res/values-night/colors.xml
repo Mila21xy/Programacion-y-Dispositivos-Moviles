@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryNight">#BB86FC</color>         <!-- Azul claro -->
+    <color name="colorSecondaryNight">#03DAC5</color>       <!-- Verde oscuro -->
+    <color name="colorBackgroundNight">#121212</color>      <!-- Negro suave -->
+    <color name="colorSurfaceNight">#1E1E1E</color>        <!-- Gris oscuro -->
+    <color name="colorTextPrimaryNight">#FFFFFF</color>     <!-- Texto principal (blanco) -->
+    <color name="colorTextOnPrimaryNight">#000000</color>   <!-- Texto sobre color primario (gris claro) -->
+</resources>

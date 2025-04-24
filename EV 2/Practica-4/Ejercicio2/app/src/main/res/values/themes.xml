@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="Base.Theme.Ejercicio2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Personaliza tu tema claro aquí -->
+        <item name="colorPrimary">@color/colorPrimary</item> <!-- Color primario -->
+        <item name="colorOnPrimary">@color/white</item> <!-- Color de texto en el primario -->
+        <item name="colorSecondary">@color/colorSecondary</item> <!-- Color secundario -->
+        <item name="colorOnSecondary">@color/black</item> <!-- Color de texto en el secundario -->
+        <item name="colorBackground">@color/white</item> <!-- Color de fondo -->
+        <item name="colorOnBackground">@color/black</item> <!-- Color de texto en fondo -->
+        <item name="colorSurface">@color/white</item> <!-- Color de superficie -->
+        <item name="colorOnSurface">@color/black</item> <!-- Color de texto en superficie -->
+    </style>
+
+    <style name="Theme.Ejercicio2" parent="Base.Theme.Ejercicio2">
+        <!-- Aquí puedes añadir configuraciones específicas adicionales para tu tema -->
+    </style>
+</resources>

@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme for dark mode -->
+    <style name="Base.Theme.Ejercicio2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Personaliza tu tema oscuro aquí -->
+        <item name="colorPrimary">@color/colorPrimaryNight</item> <!-- Color primario en modo oscuro -->
+        <item name="colorOnPrimary">@color/white</item> <!-- Color de texto sobre el primario -->
+        <item name="colorSecondary">@color/colorSecondaryNight</item> <!-- Color secundario en modo oscuro -->
+        <item name="colorOnSecondary">@color/black</item> <!-- Color de texto sobre el secundario -->
+        <item name="colorBackground">@color/black</item> <!-- Color de fondo en modo oscuro -->
+        <item name="colorOnBackground">@color/white</item> <!-- Color de texto sobre el fondo -->
+        <item name="colorSurface">@color/colorSurfaceNight</item> <!-- Color de superficie en modo oscuro -->
+        <item name="colorOnSurface">@color/white</item> <!-- Color de texto sobre la superficie -->
+    </style>
+
+    <style name="Theme.Ejercicio2" parent="Base.Theme.Ejercicio2">
+        <!-- Aquí puedes añadir configuraciones específicas adicionales para tu tema oscuro -->
+    </style>
+</resources>

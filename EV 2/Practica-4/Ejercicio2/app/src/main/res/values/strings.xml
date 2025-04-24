@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ejercicio2</string> <!-- Nombre de la aplicación -->
+    <string name="hint_nota">Escribe tu nota aquí...</string> <!-- Texto de sugerencia para el campo de texto -->
+    <string name="btn_compartir">Compartir</string> <!-- Texto del botón de compartir -->
+    <string name="nota_mostrada">Nota mostrada aquí</string> <!-- Mensaje de visualización de nota -->
+    <string name="btn_compartir_por_correo">Compartir por correo</string> <!-- Texto del botón para compartir por correo -->
+    <string name="btn_editar">Editar nuevammente</string> <!-- Texto del botón para editar la nota -->
+</resources>

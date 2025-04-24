@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color> <!-- Negro puro -->
+    <color name="white">#FFFFFFFF</color> <!-- Blanco puro -->
+    <color name="colorPrimary">#6200EE</color> <!-- Azul vibrante para el tema -->
+    <color name="colorSecondary">#03DAC5</color> <!-- Verde aguamarina suave -->
+</resources>

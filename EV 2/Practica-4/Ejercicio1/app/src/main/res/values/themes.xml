@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Ejercicio1" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>        <!-- Color principal -->
+        <item name="colorOnPrimary">@color/colorTextOnPrimary</item> <!-- Texto sobre el color primario -->
+        <item name="colorSecondary">@color/colorSecondary</item>    <!-- Color secundario -->
+        <item name="colorOnSecondary">@color/colorTextPrimary</item>  <!-- Texto sobre el color secundario -->
+        <item name="colorBackground">@color/colorBackground</item>    <!-- Color de fondo -->
+        <item name="colorOnBackground">@color/colorTextPrimary</item>  <!-- Texto sobre el fondo -->
+        <item name="colorSurface">@color/colorSurface</item>          <!-- Color de la superficie -->
+        <item name="colorOnSurface">@color/colorTextPrimary</item>    <!-- Texto sobre la superficie -->
+
+        <item name="android:textColor">@color/colorTextPrimary</item> <!-- Color de texto predeterminado -->
+    </style>
+
+    <style name="Theme.Ejercicio1" parent="Base.Theme.Ejercicio1">
+    </style>
+</resources>
