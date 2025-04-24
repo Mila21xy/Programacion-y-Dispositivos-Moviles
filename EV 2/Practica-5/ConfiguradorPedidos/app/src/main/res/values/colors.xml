@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color> <!-- Negro -->
+    <color name="white">#FFFFFFFF</color> <!-- Blanco -->
+    <color name="colorPrimary">#6200EE</color> <!-- Color primario -->
+    <color name="colorPrimaryLight">#BB86FC</color> <!-- Color primario claro -->
+    <color name="colorAccent">#03DAC5</color> <!-- Color de acento -->
+    <color name="colorBackground">#FFFFFF</color> <!-- Color de fondo claro -->
+    <color name="colorSurface">#F5F5F5</color> <!-- Color de superficie -->
+    <color name="colorOnPrimary">#FFFFFF</color> <!-- Texto sobre color primario -->
+    <color name="colorOnSurface">#000000</color> <!-- Texto sobre superficie -->
+</resources>  

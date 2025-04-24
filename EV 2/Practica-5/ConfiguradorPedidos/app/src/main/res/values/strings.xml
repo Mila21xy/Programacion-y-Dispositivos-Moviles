@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ConfiguradorPedidos</string> <!-- Nombre de la aplicación -->
+    <string name="msg_titulo">Configurador de Pedidos</string> <!-- Título principal de la aplicación -->
+    <string name="btn_nuevo_pedido">Nuevo Pedido</string> <!-- Texto del botón para iniciar un nuevo pedido -->
+    <string name="msg_titulo_seleccion">Selecciona tu comida</string> <!-- Mensaje de título en la selección de comida -->
+    <string name="pizza">Pizza</string> <!-- Opción de comida: Pizza -->
+    <string name="hamburguesa">Hamburguesa</string> <!-- Opción de comida: Hamburguesa -->
+    <string name="ensalada">Ensalada</string> <!-- Opción de comida: Ensalada -->
+    <string name="btn_siguiente">Siguiente</string> <!-- Texto del botón para avanzar a la siguiente pantalla -->
+    <string name="msg_titulo_seleccion_extras">Selecciona los extras</string> <!-- Mensaje de título en la selección de extras -->
+    <string name="bebida">Bebida</string> <!-- Opción de extra: Bebida -->
+    <string name="papas_fritas">Papitas fritas</string> <!-- Opción de extra: Papas fritas -->
+    <string name="postre">Postre</string> <!-- Opción de extra: Postre -->
+    <string name="msg_titulo_resumen">Resumen del Pedido</string> <!-- Título para mostrar el resumen del pedido -->
+    <string name="btn_confirmar">Confirmar</string> <!-- Texto del botón para confirmar el pedido -->
+    <string name="btn_editar">Editar</string> <!-- Texto del botón para editar el pedido -->
+</resources>
