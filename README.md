@@ -22,13 +22,14 @@
 - ${\color{black}Figuras}$
 - ${\color{black}Sistema \space de \space Gestión \space de \space Biblioteca}$
 
-## ${\color{red}Práctica \space 03 \space (Android \space Studio)}$
+## ${\color{red}Práctica \space 04 \space (Android \space Studio)}$
 
-- ${\color{black}Próximos \space ejercicios...}$
+- ${\color{black}Editor \space de \space perfil \space con \space confirmación}$
+- ${\color{black}Editor \space de \space nota \space rápida}$
 
-## ${\color{red}Práctica \space 04}$
+## ${\color{red}Práctica \space 05}$
 
-- ${\color{black}Próximos \space ejercicios...}$
+- ${\color{black}Configurador \space de \space pedido \space de \space comida }$ 
 
 ----------
 
