@@ -16,10 +16,10 @@ class GameFragment : Fragment() {
     private var _binding: FragmentGameBinding? = null
     private val binding get() = _binding!!
 
-    // Instancia del gestor de colores
+    // Gestión de colores
     private lateinit var colorManager: ColorManager
 
-    // Variables para el puntaje y temporizador
+    // Variables del juego
     private var score = 0
     private var gameTime = 30000L // 30 segundos en milisegundos
     private var timeRemaining = gameTime
@@ -38,24 +38,24 @@ class GameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Creamos la instancia del gestor de colores
+        // Inicializamos el gestor de colores
         colorManager = ColorManager(requireContext())
 
-        // Configuración de los listeners para los botones de colores
+        // Configuramos los listeners de los botones
         setupButtonListeners()
 
-        // Se lanza la partida
+        // Iniciamos el juego
         startGame()
     }
 
     private fun setupButtonListeners() {
-        // Para cada botón, asignamos su evento respectivo
+        // Para cada botón de color, configuramos su listener
         for ((buttonId, colorId) in colorManager.buttonColorMap) {
             view?.findViewById<Button>(buttonId)?.setOnClickListener {
-                // Verificamos la respuesta seleccionada
+                // Verificamos si el botón pulsado coincide con el color mostrado
                 checkAnswer(colorId)
 
-                // Añadimos animate al botón pulsado
+                // Aplicamos animación al botón
                 val pulseAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.pulse_animation)
                 it.startAnimation(pulseAnimation)
             }
@@ -63,7 +63,7 @@ class GameFragment : Fragment() {
     }
 
     private fun startGame() {
-        // Limpiamos puntuación y refrescamos contador
+        // Reiniciamos las variables del juego
         score = 0
         timeRemaining = gameTime
         updateScoreDisplay()
@@ -71,25 +71,23 @@ class GameFragment : Fragment() {
         // Mostramos el primer color
         setNewRandomColor()
 
-        // Arrancamos la cuenta regresiva
+        // Iniciamos el temporizador
         startTimer()
 
-        // Indicamos que el tiempo de juego está activo
+        // Indicamos que el juego está en marcha
         gameRunning = true
     }
 
     private fun startTimer() {
         countDownTimer = object : CountDownTimer(timeRemaining, 1000) {
             override fun onTick(millisUntilFinished: Long) {
-                // Actualizamos el conteo restante
                 timeRemaining = millisUntilFinished
-                val secondsLeft = millisUntilFinished / 1000
-                binding.timerTextView.text = getString(R.string.time_left, secondsLeft)
+                val secondsRemaining = millisUntilFinished / 1000
+                binding.timerTextView.text = getString(R.string.time_remaining, secondsRemaining)
             }
 
             override fun onFinish() {
-                // Cuando se acaba el tiempo, termina la partida
-                finishGame()
+                endGame()
             }
         }.start()
     }
@@ -98,23 +96,23 @@ class GameFragment : Fragment() {
         if (!gameRunning) return
 
         if (selectedColorId == colorManager.currentColor) {
-            //Respuesta correcta, sumamos puntos
+            // Respuesta correcta
             score++
             updateScoreDisplay()
 
-            // Se muestra un nuevo color
+            // Cambiamos el color
             setNewRandomColor()
         } else {
-            //Respuesta incorrecta - Sin puntuación adicional
-            // Opcional: feedback visual o de audio
+            // Respuesta incorrecta - No sumamos puntos
+            // Opcional: Podríamos restar puntos o añadir algún feedback visual/auditivo
         }
     }
 
     private fun setNewRandomColor() {
-        // Escogemos un nuevo color de forma aleatoria
+        // Obtenemos un nuevo color aleatorio
         colorManager.currentColor = colorManager.getRandomColor()
 
-        // Aplicamos el color al fondo del display
+        // Aplicamos el color al view
         binding.colorDisplay.setBackgroundColor(colorManager.getColorValue(colorManager.currentColor))
 
         // Animamos el cambio de color
@@ -123,30 +121,31 @@ class GameFragment : Fragment() {
     }
 
     private fun updateScoreDisplay() {
-        // Se actualiza la puntuación mostrada
         binding.scoreTextView.text = getString(R.string.score, score)
     }
 
-    private fun finishGame() {
-        // Cancelamos el temporizador si aún corre
+    private fun endGame() {
+        // Detenemos el temporizador
         if (::countDownTimer.isInitialized) {
             countDownTimer.cancel()
         }
 
-        // Indicamos que la partida terminó
+        // Indicamos que el juego ha terminado
         gameRunning = false
 
-        // Navegamos hacia la pantalla de resultados, enviando la puntuación
+        // Navegamos al fragmento de resultados pasando la puntuación
         val action = GameFragmentDirections.actionGameFragmentToResultFragment(score)
         findNavController().navigate(action)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        // Si hay temporizador activo, se detiene al salir del fragmento
+
+        // Detenemos el temporizador si abandonamos el fragmento
         if (::countDownTimer.isInitialized) {
             countDownTimer.cancel()
         }
+
         _binding = null
     }
 }

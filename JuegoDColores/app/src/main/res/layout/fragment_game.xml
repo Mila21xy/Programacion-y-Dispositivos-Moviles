@@ -54,7 +54,7 @@
             android:id="@+id/colorDisplay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/red" />
+            android:background="@color/pink" />
     </androidx.cardview.widget.CardView>
 
     <!-- Grid de botones de colores -->

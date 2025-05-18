@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
-        android:backgroundTint="@color/red"
+        android:backgroundTint="@color/pink"
         android:text="@string/start_game"
         android:textColor="@color/black"
         android:textSize="18sp"
