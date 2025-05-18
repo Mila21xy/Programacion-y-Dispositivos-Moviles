@@ -1,4 +1,4 @@
-package com.example.juegodecolores
+package com.example.juegodcolores
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.juegodecolores.databinding.FragmentResultBinding
+import com.example.juegodcolores.databinding.FragmentResultBinding
 
 class ResultFragment : Fragment() {
 

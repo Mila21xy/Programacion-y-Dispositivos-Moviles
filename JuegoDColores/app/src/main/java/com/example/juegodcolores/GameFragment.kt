@@ -1,4 +1,4 @@
-package com.example.juegodecolores
+package com.example.juegodcolores
 
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -9,7 +9,7 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.juegodecolores.databinding.FragmentGameBinding
+import com.example.juegodcolores.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
 

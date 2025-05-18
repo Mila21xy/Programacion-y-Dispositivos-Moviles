@@ -1,4 +1,4 @@
-package com.example.juegodecolores
+package com.example.juegodcolores
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
