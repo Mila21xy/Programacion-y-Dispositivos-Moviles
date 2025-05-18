@@ -17,9 +17,8 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
-
 }
 
-rootProject.name = "JuegoDColores"
+rootProject.name = "Juego de Colores"
 include(":app")
  

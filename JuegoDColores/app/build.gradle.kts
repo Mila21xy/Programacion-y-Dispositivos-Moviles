@@ -1,7 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
+    id("androidx.navigation.safeargs.kotlin")
+    kotlin("kapt")
 }
 
 android {
@@ -10,15 +11,12 @@ android {
 
     defaultConfig {
         applicationId = "com.example.juegodcolores"
-        minSdk = 21
+        minSdk = 31
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
 
     buildTypes {
@@ -38,45 +36,36 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.8"
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
+        dataBinding = true
+        viewBinding = true
     }
 }
 
 dependencies {
-    // Implementaciones básicas
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-
-    // Compose BOM
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-
-    // Navegación y ViewModel
-    implementation(libs.androidx.navigation.compose)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-
-    // Testing
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.library)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
+    implementation(libs.androidx.cardview)
+    implementation(libs.androidx.gridlayout)
 
-    // Debug
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4") // o la última versión
+    // Para DataBinding y safeargs navigation
+    kapt("androidx.databinding:databinding-compiler-common:8.10.0")
+}
 
+// Add this configuration to resolve the dependency conflict
+configurations.all {
+    resolutionStrategy {
+        // Force specific versions
+        force("androidx.core:core:1.16.0")
+        // Exclude old support libraries
+        exclude(group = "com.android.support")
+    }
 }
