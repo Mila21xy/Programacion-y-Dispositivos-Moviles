@@ -29,6 +29,9 @@
 
 - 🍽️ Configurador de pedido de comida
 
+## 🍔 [PARCIAL (Android Studio)](https://github.com/Mila21xy/Programacion-y-Dispositivos-Moviles/tree/main/JuegoDColores)
+- 🎨 Juego de colores
+
 -----------------------------
 
 Creado con ❤️ por [Angela Milagros Quispe Huanca](https://github.com/Mila21xy/Programacion-y-Dispositivos-Moviles.git) 😊
