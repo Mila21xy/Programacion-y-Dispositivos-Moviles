@@ -1,55 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!-- Archivo de navegación de Android Jetpack Navigation -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/welcomeFragment">
+    app:startDestination="@id/welcomeFragment"> <!-- Fragmento inicial al iniciar la app -->
 
+    <!-- Fragmento de bienvenida (pantalla inicial) -->
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.example.juegodcolores.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome">
+
+        <!-- Acción que navega desde WelcomeFragment a GameFragment -->
         <action
             android:id="@+id/action_welcomeFragment_to_gameFragment"
             app:destination="@id/gameFragment"
             app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
+            app:exitAnim="@android:anim/fade_out" /> <!-- Animación al salir -->
     </fragment>
 
+    <!-- Fragmento del juego -->
     <fragment
         android:id="@+id/gameFragment"
         android:name="com.example.juegodcolores.GameFragment"
         android:label="fragment_game"
         tools:layout="@layout/fragment_game">
+
+        <!-- Acción que navega desde GameFragment a ResultFragment -->
         <action
             android:id="@+id/action_gameFragment_to_resultFragment"
             app:destination="@id/resultFragment"
             app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@android:anim/slide_out_right"
-            app:popUpTo="@id/welcomeFragment" />
+            app:popUpTo="@id/welcomeFragment" /> <!-- Elimina WelcomeFragment del back stack -->
     </fragment>
 
+    <!-- Fragmento de resultados -->
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.example.juegodcolores.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result">
+
+        <!-- Argumento que recibe el puntaje del juego -->
         <argument
             android:name="score"
             app:argType="integer" />
+
+        <!-- Acción para volver a jugar: ResultFragment -> GameFragment -->
         <action
             android:id="@+id/action_resultFragment_to_gameFragment"
             app:destination="@id/gameFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out" />
+
+        <!-- Acción para volver al inicio: ResultFragment -> WelcomeFragment -->
         <action
             android:id="@+id/action_resultFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:popUpTo="@id/welcomeFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="true" />              <!-- También elimina WelcomeFragment de la pila -->
     </fragment>
 </navigation>
