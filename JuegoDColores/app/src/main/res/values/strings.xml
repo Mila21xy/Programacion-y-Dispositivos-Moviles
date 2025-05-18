@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">JuegoDColores</string>
+    <string name="este_es_el_fragmento_1">Este es el Fragmento 1</string>
+    <string name="este_es_el_fragmento_2">Este es el Fragmento 2</string>
+    <string name="este_es_el_fragmento_3">Este es el Fragmento 3</string>
 </resources>
