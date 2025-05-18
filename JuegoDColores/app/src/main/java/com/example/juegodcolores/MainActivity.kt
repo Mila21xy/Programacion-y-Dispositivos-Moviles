@@ -22,50 +22,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.juegodcolores.ui.theme.JuegoDColoresTheme
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            JuegoDColoresTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    PantallaBienvenida()
-                }
-            }
+        setContentView(R.layout.activity_main) // Asegúrate que activity_main.xml tenga un FrameLayout con id `fragment_container`
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, WelcomeFragment())
+                .commit()
         }
     }
-}
 
-@Composable
-fun PantallaBienvenida() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(32.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(
-            text = "¡Bienvenido al Juego de Colores!",
-            fontSize = 24.sp,
-            color = MaterialTheme.colorScheme.primary
-        )
-        Spacer(modifier = Modifier.height(24.dp))
-        Button(onClick = {
-            // Para agregar navegación luego
-        }) {
-            Text("Empezar")
-        }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun PantallaBienvenidaPreview() {
-    JuegoDColoresTheme {
-        PantallaBienvenida()
+    fun showFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
     }
 }

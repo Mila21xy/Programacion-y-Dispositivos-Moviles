@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">JuegoDColores</string>
+    <string name="app_name">Juego de Colores</string>
+    <string name="welcome_title">¡Bienvenido al Juego!</string>
+    <string name="welcome_description">Presiona el color que coincida con el mostrado en pantalla. Tienes 30 segundos para obtener la mayor puntuación.</string>
+    <string name="start_button">Iniciar Juego</string>
+    <string name="score_text">Puntos: </string>
+    <string name="time_text">Tiempo: </string>
+    <string name="final_score">Tu puntaje: </string>
+    <string name="play_again">Jugar de nuevo</string>
 </resources>
