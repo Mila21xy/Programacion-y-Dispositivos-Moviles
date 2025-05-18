@@ -10,12 +10,18 @@
     <color name="accent">#FF5722</color>
 
     <!-- Colores para el juego -->
-    <color name="red">#F44336</color>
+    <color name="pink">#F44336</color>
     <color name="green">#4CAF50</color>
     <color name="blue">#2196F3</color>
     <color name="yellow">#FFEB3B</color>
     <color name="purple">#9C27B0</color>
     <color name="orange">#FF9800</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="magenta">#E040FB</color>
+    <color name="lime">#CDDC39</color>
+    <color name="brown">#795548</color>
+    <color name="teal">#009688</color>
+    <!-- Color transparente para efectos -->
     <color name="transparent">#00000000</color>
 
     <!-- Colores para textos -->

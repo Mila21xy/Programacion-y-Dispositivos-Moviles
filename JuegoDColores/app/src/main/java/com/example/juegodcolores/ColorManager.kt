@@ -4,43 +4,43 @@ import androidx.core.content.ContextCompat
 
 class ColorManager(private val context: Context) {
 
-    // Definición de los colores disponibles en el juego
+    // Lista de colores utilizados en el juego
     val colorMap = mapOf(
-        R.color.red to R.string.red,
-        R.color.green to R.string.green,
-        R.color.blue to R.string.blue,
-        R.color.yellow to R.string.yellow,
-        R.color.purple to R.string.purple,
-        R.color.orange to R.string.orange
+        R.color.pink to R.string.pink,
+        R.color.cyan to R.string.cyan,
+        R.color.magenta to R.string.magenta,
+        R.color.lime to R.string.lime,
+        R.color.brown to R.string.brown,
+        R.color.teal to R.string.teal
     )
 
-    // Botones del juego con sus respectivos colores
+    // Mapeo de botones con sus colores correspondientes
     val buttonColorMap = mapOf(
-        R.id.redButton to R.color.red,
-        R.id.greenButton to R.color.green,
-        R.id.blueButton to R.color.blue,
-        R.id.yellowButton to R.color.yellow,
-        R.id.purpleButton to R.color.purple,
-        R.id.orangeButton to R.color.orange
+        R.id.pinkButton to R.color.pink,
+        R.id.cyanButton to R.color.cyan,
+        R.id.magentaButton to R.color.magenta,
+        R.id.limeButton to R.color.lime,
+        R.id.brownButton to R.color.brown,
+        R.id.tealButton to R.color.teal
     )
 
-    // Color actual que se muestra en pantalla
-    var currentColor = R.color.red
+    // Color activo que se muestra en pantalla
+    var currentColor = R.color.pink
 
-    // Función para obtener un color aleatorio
+    // Función para seleccionar un color al azar
     fun getRandomColor(): Int {
         val colors = colorMap.keys.toList()
         val randomIndex = (0 until colors.size).random()
         return colors[randomIndex]
     }
 
-    // Función para obtener el nombre del color
+    // Función para obtener el nombre del color en texto
     fun getColorName(colorResId: Int): String {
-        val stringResId = colorMap[colorResId] ?: R.string.red
+        val stringResId = colorMap[colorResId] ?: R.string.pink
         return context.getString(stringResId)
     }
 
-    // Función para obtener el valor del color
+    // Función para obtener el valor del color en formato Android
     fun getColorValue(colorResId: Int): Int {
         return ContextCompat.getColor(context, colorResId)
     }

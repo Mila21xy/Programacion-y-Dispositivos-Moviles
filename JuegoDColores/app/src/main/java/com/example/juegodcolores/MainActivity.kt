@@ -13,13 +13,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Configuramos el controlador de navegación
+        // Inicialización del controlador de navegación
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
     }
 
-    // Manejo del botón de retroceso
+    // Propiedad que gestiona la acción del botón retroceso
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }

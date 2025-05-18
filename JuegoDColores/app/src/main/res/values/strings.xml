@@ -1,29 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    Juego de Colores - Definición de strings
-    Autor: Leonardo Pachari
-    Fecha creación: 10/05/2025
-    Última modificación: 11/05/2025
--->
+
 <resources>
     <string name="app_name">Juego de Colores</string>
 
     <!-- WelcomeFragment -->
     <string name="welcome_title">¡Bienvenido al Juego de Colores!</string>
-    <string name="welcome_description">Pon a prueba tus reflejos identificando el color correcto.
-        \n\nTienes 30 segundos para conseguir el mayor puntaje posible.\n\n¡Pulsa el botón que coincida con el color que aparece en pantalla!</string>
+    <string name="welcome_description">Demuestra qué tan rápidos son tus reflejos eligiendo el color correcto.
+        \n\nTienes 30 segundos para obtener la mayor cantidad de puntos posible.\n\n¡Haz clic en el botón que tenga el mismo color que ves en la pantalla!</string>
     <string name="start_game">Iniciar Juego</string>
     <string name="colores_del_juego">Colores del juego</string>
 
     <!-- GameFragment -->
     <string name="score">Puntuación: %1$d</string>
     <string name="time_remaining">Tiempo: %1$d s</string>
-    <string name="red">Rojo</string>
-    <string name="green">Verde</string>
-    <string name="blue">Azul</string>
-    <string name="yellow">Amarillo</string>
-    <string name="purple">Púrpura</string>
-    <string name="orange">Naranja</string>
+    <string name="pink">Rosa</string>
+    <string name="cyan">Cian</string>
+    <string name="magenta">Magenta</string>
+    <string name="lime">Lima</string>
+    <string name="brown">Marrón</string>
+    <string name="teal">Verde Azulado</string>
 
     <!-- ResultFragment -->
     <string name="result_title">¡Juego Terminado!</string>

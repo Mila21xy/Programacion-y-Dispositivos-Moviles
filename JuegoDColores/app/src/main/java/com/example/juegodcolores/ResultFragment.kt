@@ -15,10 +15,10 @@ class ResultFragment : Fragment() {
     private var _binding: FragmentResultBinding? = null
     private val binding get() = _binding!!
 
-    // Argumentos recibidos (puntuación)
+    // Recibimos los datos de la puntuación a través de los argumentos
     private val args: ResultFragmentArgs by navArgs()
 
-    // Gestor de puntuaciones
+    // Gestor para gestionar la puntuación máxima
     private lateinit var scoreManager: ScoreManager
 
     override fun onCreateView(
@@ -33,20 +33,20 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Inicializamos el gestor de puntuaciones
+        // Configuramos el administrador de puntuaciones
         scoreManager = ScoreManager(requireContext())
 
-        // Mostramos la puntuación final
+        // Mostramos en pantalla la puntuación alcanzada
         val finalScore = args.score
         binding.finalScoreTextView.text = getString(R.string.score_final, finalScore)
 
-        // Comprobamos si es un nuevo récord
+        // Comprobamos si es una marca personal
         if (scoreManager.saveHighScore(finalScore)) {
-            // Mostramos el mensaje de nuevo récord
+            // Si se establece un nuevo récord, lo mostramos
             binding.highScoreTextView.text = getString(R.string.high_score, finalScore)
             binding.highScoreTextView.visibility = View.VISIBLE
         } else {
-            // Mostramos el récord actual si no es nuevo
+            // En caso contrario, mostramos la mejor puntuación hasta ahora
             val highScore = scoreManager.getHighScore()
             if (highScore > 0) {
                 binding.highScoreTextView.text = getString(R.string.high_score, highScore)
@@ -54,7 +54,7 @@ class ResultFragment : Fragment() {
             }
         }
 
-        // Mostramos un mensaje según la puntuación
+        // Generamos un mensaje acorde a la puntuación final
         val message = when {
             finalScore < 10 -> getString(R.string.message_bad)
             finalScore < 20 -> getString(R.string.message_good)
@@ -62,29 +62,29 @@ class ResultFragment : Fragment() {
         }
         binding.messageTextView.text = message
 
-        // Animamos los elementos
+        // Agregamos efectos visuales a los elementos
         val fadeIn = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
         binding.resultTitle.startAnimation(fadeIn)
         binding.finalScoreTextView.startAnimation(fadeIn)
         binding.messageTextView.startAnimation(fadeIn)
 
-        // Configuramos el botón para jugar de nuevo
+        // Configuramos la opción para volver a jugar
         binding.playAgainButton.setOnClickListener {
-            // Aplicamos animación al botón
+            // Se anima el botón con una pulsación
             val pulseAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.pulse_animation)
             it.startAnimation(pulseAnimation)
 
-            // Navegamos al fragmento de juego
+            // Navegamos al fragmento de juego para reiniciar
             findNavController().navigate(R.id.action_resultFragment_to_gameFragment)
         }
 
-        // Configuramos el botón para volver al menú principal
+        // Configuramos la opción para regresar al menú principal
         binding.backToMenuButton.setOnClickListener {
-            // Aplicamos animación al botón
+            // Se aplica la animación de pulsar al botón
             val pulseAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.pulse_animation)
             it.startAnimation(pulseAnimation)
 
-            // Navegamos al fragmento de bienvenida
+            // Volvemos a la pantalla de bienvenida
             findNavController().navigate(R.id.action_resultFragment_to_welcomeFragment)
         }
     }

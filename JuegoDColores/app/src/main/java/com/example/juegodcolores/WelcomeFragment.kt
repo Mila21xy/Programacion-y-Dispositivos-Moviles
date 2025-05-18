@@ -26,18 +26,18 @@ class WelcomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Animamos el título y la imagen
-        val fadeIn = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
-        binding.welcomeTitle.startAnimation(fadeIn)
-        binding.welcomeImage.startAnimation(fadeIn)
+        // Animamos el título y la imagen de bienvenida
+        val fadeInAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.fade_in)
+        binding.welcomeTitle.startAnimation(fadeInAnimation)
+        binding.welcomeImage.startAnimation(fadeInAnimation)
 
-        // Configuramos el botón de inicio
+        // Configuración del botón para comenzar a jugar
         binding.startGameButton.setOnClickListener {
-            // Aplicamos animación al botón
-            val pulseAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.pulse_animation)
-            it.startAnimation(pulseAnimation)
+            // Se realiza una animación al pulsar
+            val pulseAnim = AnimationUtils.loadAnimation(requireContext(), R.anim.pulse_animation)
+            it.startAnimation(pulseAnim)
 
-            // Navegamos al fragmento de juego
+            // Se navega hacia la pantalla del juego
             findNavController().navigate(R.id.action_welcomeFragment_to_gameFragment)
         }
     }
