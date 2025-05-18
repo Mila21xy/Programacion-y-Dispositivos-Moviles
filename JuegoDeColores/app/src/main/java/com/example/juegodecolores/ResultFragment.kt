@@ -16,44 +16,28 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ResultFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ResultFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+class ResultFragment : Fragment(R.layout.fragment_result) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val score = arguments?.getInt("score") ?: 0
+        val message = when {
+            score >= 20 -> "¡Increíble!"
+            score >= 10 -> "¡Bien hecho!"
+            else -> "¡Sigue practicando!"
         }
-    }
+        val prefs = requireContext().getSharedPreferences("color_game", Context.MODE_PRIVATE)
+        val best = prefs.getInt("high_score", 0)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_result, container, false)
-    }
+        if (score > best) {
+            prefs.edit().putInt("high_score", score).apply()
+        }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ResultFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ResultFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        view.findViewById<TextView>(R.id.scoreText).text = "Puntaje: $score\nMáximo: $best\n$message"
+
+
+        view.findViewById<TextView>(R.id.scoreText).text = "Puntaje: $score\n$message"
+
+        view.findViewById<Button>(R.id.btnRestart).setOnClickListener {
+            findNavController().navigate(R.id.action_resultFragment_to_welcomeFragment)
+        }
     }
 }

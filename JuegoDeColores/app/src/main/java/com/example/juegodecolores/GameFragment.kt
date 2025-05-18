@@ -16,44 +16,70 @@ private const val ARG_PARAM2 = "param2"
  * Use the [GameFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class GameFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class GameFragment : Fragment(R.layout.fragment_game) {
+    private lateinit var colorBox: TextView
+    private lateinit var scoreText: TextView
+    private lateinit var timerText: TextView
+    private var score = 0
+    private var correctColor = ""
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    private lateinit var timer: CountDownTimer
+
+    private val colors = listOf("Rojo", "Verde", "Azul", "Amarillo")
+    private val colorMap = mapOf(
+        "Rojo" to Color.RED,
+        "Verde" to Color.GREEN,
+        "Azul" to Color.BLUE,
+        "Amarillo" to Color.YELLOW
+    )
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        colorBox = view.findViewById(R.id.colorBox)
+        scoreText = view.findViewById(R.id.scoreText)
+        timerText = view.findViewById(R.id.timerText)
+
+        startGame(view)
+
+        listOf("Rojo", "Verde", "Azul", "Amarillo").forEach { color ->
+            view.findViewById<Button>(resources.getIdentifier("btn$color", "id", requireContext().packageName)).setOnClickListener {
+                checkAnswer(color)
+            }
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_game, container, false)
+    private fun startGame(view: View) {
+        score = 0
+        scoreText.text = "Puntaje: 0"
+        showRandomColor()
+
+        timer = object : CountDownTimer(30000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                timerText.text = "Tiempo: ${millisUntilFinished / 1000}"
+            }
+
+            override fun onFinish() {
+                val action = GameFragmentDirections.actionGameFragmentToResultFragment(score)
+                findNavController().navigate(action)
+            }
+        }.start()
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment GameFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            GameFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun showRandomColor() {
+        correctColor = colors.random()
+        colorBox.setBackgroundColor(colorMap[correctColor]!!)
+    }
+
+    private fun checkAnswer(selected: String) {
+        if (selected == correctColor) {
+            score++
+            scoreText.text = "Puntaje: $score"
+            // Opcional: sonido o animación
+        }
+        showRandomColor()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        timer.cancel()
     }
 }
