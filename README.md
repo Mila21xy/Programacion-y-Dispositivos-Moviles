@@ -32,6 +32,8 @@
 ## 🍔 [PARCIAL (Android Studio)](https://github.com/Mila21xy/Programacion-y-Dispositivos-Moviles/tree/main/JuegoDColores)
 - 🎨 Juego de colores
 
+## 🍔 [Práctica 06 (Flutter)](https://github.com/Mila21xy/Programacion-y-Dispositivos-Moviles/tree/main/EV%203/)
+- 🔧 Interfaces Estáticas Flutter
 -----------------------------
 
 Creado con ❤️ por [Angela Milagros Quispe Huanca](https://github.com/Mila21xy/Programacion-y-Dispositivos-Moviles.git) 😊
