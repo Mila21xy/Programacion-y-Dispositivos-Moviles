@@ -29,10 +29,10 @@
 
 - 🍽️ Configurador de pedido de comida
 
-## 🍔 [PARCIAL (Android Studio)](https://github.com/Mila21xy/Programacion-y-Dispositivos-Moviles/tree/main/JuegoDColores)
+## 🎮 [PARCIAL (Android Studio)](https://github.com/Mila21xy/Programacion-y-Dispositivos-Moviles/tree/main/JuegoDColores)
 - 🎨 Juego de colores
 
-## 🍔 [Práctica 06 (Flutter)](https://github.com/Mila21xy/Programacion-y-Dispositivos-Moviles/tree/main/EV%203/PRACTICA%206)
+## 👨‍💻 [Práctica 06 (Flutter)](https://github.com/Mila21xy/Programacion-y-Dispositivos-Moviles/tree/main/EV%203/PRACTICA%206)
 - 🔧 Interfaces Estáticas Flutter
 -----------------------------
 
