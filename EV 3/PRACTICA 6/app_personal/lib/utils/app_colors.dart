@@ -1,9 +1,4 @@
-/*
-* Descripción: Definición de colores utilizados en la aplicación
-* Autor: Leonardo Pachari
-* Fecha creación: 28/05/2025
-* Fecha última modificación: 28/05/2025
-*/
+
 
 import 'package:flutter/material.dart';
 
